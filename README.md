@@ -9,27 +9,27 @@ git clone https://github.com/dProgrammingUniversity/metaplex-core-nft-asset-exam
 cd metaplex-core-nft-asset-example
 ```
 
-Install dependencies
+1. Install dependencies
 ```sh
 yarn install
 ```
 
-Sync program keypair across Anchor.toml and lib.rs
+2. Sync program keypair across Anchor.toml and lib.rs
 ```sh
 anchor keys sync
 ```
 
-Build the metaplex core nft asset minter program
+3. Build the metaplex core nft asset minter program
 ```sh
 anchor build
 ```
 
-Deploy to Solana Devnet
+4. Deploy to Solana Devnet
 ```sh
 anchor deploy
 ```
 
-Test NFT minting
+5. Test NFT minting
 ```sh
 anchor run test
 ```
