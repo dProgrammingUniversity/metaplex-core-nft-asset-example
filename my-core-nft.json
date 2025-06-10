@@ -1,0 +1,21 @@
+{
+    "name": "My Core NFT",
+    "symbol": "MCNFT",
+    "description": "A sample Metaplex Core NFT Asset on Solana:)",
+    "image": "https://w7.pngwing.com/pngs/153/594/png-transparent-solana-coin-sign-icon-shiny-golden-symmetric-geometrical-design.png",
+    "attributes": [
+        {
+            "trait_type": "Type",
+            "value": "Fungible Token"
+        },
+        {
+            "trait_type": "Blockchain",
+            "value": "Solana"
+        },
+        {
+            "trait_type": "Standard",
+            "value": "SPL"
+        }
+    ],
+    "external_url": "https://github.com/dProgrammingUniversity/metaplex-core-nft-asset-example"
+}
