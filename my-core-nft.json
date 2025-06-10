@@ -6,7 +6,7 @@
     "attributes": [
         {
             "trait_type": "Type",
-            "value": "Fungible Token"
+            "value": "Non-Fungible Token"
         },
         {
             "trait_type": "Blockchain",
@@ -15,7 +15,14 @@
         {
             "trait_type": "Standard",
             "value": "SPL"
+        },
+        {
+            "trait_type": "Color",
+            "value": "Golden"
+        },
+        {
+            "trait_type": "Background",
+            "value": "SPL"
         }
-    ],
-    "external_url": "https://github.com/dProgrammingUniversity/metaplex-core-nft-asset-example"
+    ]
 }

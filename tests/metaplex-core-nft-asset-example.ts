@@ -18,7 +18,7 @@ describe("create-core-asset-example", () => {
 
     const createAssetArgs = {
       name: "My Core NFT",
-      uri: "your_uri_here", // Replace with your actual URI
+      uri: "https://raw.githubusercontent.com/dProgrammingUniversity/metaplex-core-nft-asset-example/refs/heads/main/my-core-nft.json", // Replace with your actual URI
     };
 
     // 3. Send transaction
