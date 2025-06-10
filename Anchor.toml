@@ -6,7 +6,7 @@ resolution = true
 skip-lint = false
 
 [programs.devnet]
-metaplex_core_nft_asset_example = "BjMEJTk1VQWDeDyTMaziXLYzujvVqgdvHEu4BYNQ56NR"
+metaplex_core_nft_asset_example = "3R9H5SimczMRZvZF24sRz1wR2EpXmkLCi4GBQCc8Gdyc"
 
 [registry]
 url = "https://api.devnet.solana.com"

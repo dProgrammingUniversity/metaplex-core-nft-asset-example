@@ -8,7 +8,7 @@ use mpl_core::{
     }
 };
 
-declare_id!("2KZp4Ph2tDqpqMKj3eUVP1VJAh7RzrzbYzvbbZW5f5Aa");
+declare_id!("3R9H5SimczMRZvZF24sRz1wR2EpXmkLCi4GBQCc8Gdyc");
 
 #[derive(AnchorDeserialize, AnchorSerialize)]
 pub struct CreateAssetArgs {
