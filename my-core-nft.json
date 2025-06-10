@@ -13,8 +13,8 @@
             "value": "Solana"
         },
         {
-            "trait_type": "Standard",
-            "value": "SPL"
+            "trait_type": "NFT Standard",
+            "value": "Metaplex Core"
         },
         {
             "trait_type": "Color",
