@@ -1,16 +1,51 @@
 import * as anchor from "@coral-xyz/anchor";
 import { Program } from "@coral-xyz/anchor";
-import { MetaplexCoreNftAssetExample } from "../target/types/metaplex_core_nft_asset_example";
+import { CreateCoreAssetExample } from "../target/types/create_core_asset_example";
+import { Keypair } from "@solana/web3.js";
 
-describe("metaplex-core-nft-asset-example", () => {
-  // Configure the client to use the local cluster.
-  anchor.setProvider(anchor.AnchorProvider.env());
+describe("create-core-asset-example", () => {
+  // 1. Proper provider setup
+  const provider = anchor.AnchorProvider.env();
+  anchor.setProvider(provider);
+  
+  const program = anchor.workspace.CreateCoreAssetExample as Program<CreateCoreAssetExample>;
+  const wallet = provider.wallet;
+  const connection = provider.connection;
 
-  const program = anchor.workspace.metaplexCoreNftAssetExample as Program<MetaplexCoreNftAssetExample>;
+  it("Create Core NFT Asset", async () => {
+    // 2. Generate asset keypair
+    const asset = Keypair.generate();
 
-  it("Is initialized!", async () => {
-    // Add your test here.
-    const tx = await program.methods.initialize().rpc();
-    console.log("Your transaction signature", tx);
+    const createAssetArgs = {
+      name: "My Core NFT",
+      uri: "your_uri_here", // Replace with your actual URI
+    };
+
+    // 3. Send transaction
+    const tx = await program.methods.createCoreAsset(createAssetArgs)
+      .accounts({
+        asset: asset.publicKey,
+        collection: null,
+        authority: null,
+        payer: wallet.publicKey,
+        owner: null,
+        updateAuthority: null,
+      })
+      .signers([asset]) // 4. Only asset needs explicit signing
+      .rpc();
+
+    console.log(`Success! Transaction Signature: ${tx}`);
+    
+    // 5. Confirm transaction
+    await connection.confirmTransaction(tx, "confirmed");
+    console.log("Transaction confirmed");
+
+    // 6. Verify asset creation
+    const assetInfo = await connection.getAccountInfo(asset.publicKey);
+    if (!assetInfo) {
+      throw new Error("Asset account not created");
+    }
+    console.log(`Asset created at: ${asset.publicKey.toString()}`);
+    console.log(`Owner: ${wallet.publicKey.toString()}`);
   });
 });
