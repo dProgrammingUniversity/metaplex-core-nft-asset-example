@@ -1,4 +1,4 @@
-# Metaplex Core NFT Asset Example
+# Metaplex Core NFT Asset Minter Example
 An example repo for how to mint Solana NFT assets using Metaplex Core NFT Standard.
 
 ## Guide
